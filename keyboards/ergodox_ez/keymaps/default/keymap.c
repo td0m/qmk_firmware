@@ -7,7 +7,6 @@
 enum layers {
     BASE,  // default layer
     SYMB,  // symbols
-    QWERTY
 };
 
 bool is_alt_tab_active = false;
@@ -31,9 +30,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox_pretty(
   KC_ESC,          KC_1,               KC_2,                 KC_3,                KC_4,                  KC_5,    KC_BACKSLASH,              ALT_TAB,        KC_6,                  KC_7,                  KC_8,                      KC_9,                 KC_0,                   KC_DEL,
   KC_TAB,          KC_Q,               KC_W,                 KC_E,                KC_R,                  KC_T,    KC_LBRC,                   KC_RBRC,        KC_Y,                  KC_U,                  KC_I,                      KC_O,                 KC_P,                   KC_BSPC,
-  KC_LCTL,         KC_A,               KC_S,                 KC_D,                LT(SYMB, KC_F),        KC_G,                                               KC_H,                  LT(SYMB, KC_J),        KC_K,                   KC_L,                 KC_COLON,               KC_ENT,
+  KC_LCTL,         KC_A,               KC_S,                 KC_D,                KC_F,                  KC_G,                                               KC_H,                  KC_J,                  KC_K,                      KC_L,                 KC_COLON,               KC_ENT,
   KC_LSFT,         KC_Z,               KC_X,                 KC_C,                KC_V,                  KC_B,    KC_QUOT,                   KC_SEMICOLON,   KC_N,                  KC_M,                  KC_COMMA,                  KC_DOT,               KC_MINUS,               KC_RSFT,
-  KC_LCTL,         KC_LALT,            KC_LGUI,              KC_BTN1,             MO(SYMB),                                                                                         KC_LGUI,               KC_LSFT,                   KC_TRNS,              KC_TRNS,                TG(QWERTY),
+  KC_LCTL,         KC_LALT,            KC_LGUI,              KC_BTN1,             MO(SYMB),                                                                                         KC_LGUI,               KC_LSFT,                   KC_TRNS,              KC_TRNS,                KC_TRNS,
 
                                                              KC_MPRV,             KC_MNXT,                                                  KC_VOLU,         KC_MPLY,
                                                                                   KC_PSCR,                                                  KC_VOLD,
@@ -52,17 +51,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_TRNS, KC_TRNS,  KC_TRNS,     KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
-[QWERTY] = LAYOUT_ergodox_pretty(
-  // left hand
-  KC_ESC,          KC_1,        KC_2,          KC_3,    KC_4,    KC_5,    KC_LEFT,              KC_RGHT,      KC_6,    KC_7,    KC_8,    KC_9,              KC_0,           KC_MINS,
-  KC_TAB,          KC_Q,        KC_W,          KC_E,    KC_R,    KC_T,    TG(SYMB),             TG(SYMB),     KC_Y,    KC_U,    KC_I,    KC_O,              KC_P,           KC_BSPC,
-  KC_LCTL,         KC_A,        KC_S,          KC_D,    KC_F,    KC_G,                                        KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
-  KC_LSFT,         KC_Z,        KC_X,          KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),                  MEH_T(KC_NO), KC_N,    KC_M,    KC_COMM, KC_DOT,           CTL_T(KC_SLSH), KC_RSFT,
-  KC_LCTL,         KC_QUOT,     KC_BTN2, KC_BTN1,  MO(SYMB),                                            KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC, TG(QWERTY),
-                                                           ALT_T(KC_APP), KC_LGUI,                 TG(QWERTY), CTL_T(KC_ESC),
-                                                                          KC_HOME,                 KC_PGUP,
-                                                         KC_SPC, KC_BSPC, KC_END,                  KC_PGDN, KC_LALT, KC_LCTL
-),
 };
 
 // Runs just one time when the keyboard initializes.
